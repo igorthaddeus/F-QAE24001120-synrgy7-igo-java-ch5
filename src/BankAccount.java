@@ -5,7 +5,6 @@ public class BankAccount {
     private String customerEmail;
     private String customerPhone;
 
-    // Constructor
     public BankAccount(String accountNumber, double balance, String customerName,
                        String customerEmail, String customerPhone) {
         this.accountNumber = accountNumber;
@@ -15,48 +14,46 @@ public class BankAccount {
         this.customerPhone = customerPhone;
     }
 
-    // Getter and Setter methods
-    public String getAccountNumber() {
-        return accountNumber;
-    }
-
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
 
-    public double getBalance() {
-        return balance;
+    public String getAccountNumber() {
+        return accountNumber;
     }
 
     public void setBalance(double balance) {
         this.balance = balance;
     }
 
-    public String getCustomerName() {
-        return customerName;
+    public double getBalance() {
+        return balance;
     }
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }
 
-    public String getCustomerEmail() {
-        return customerEmail;
+    public String getCustomerName() {
+        return customerName;
     }
 
     public void setCustomerEmail(String customerEmail) {
         this.customerEmail = customerEmail;
     }
 
-    public String getCustomerPhone() {
-        return customerPhone;
+    public String getCustomerEmail() {
+        return customerEmail;
     }
 
     public void setCustomerPhone(String customerPhone) {
         this.customerPhone = customerPhone;
     }
 
-    // Deposit method
+    public String getCustomerPhone() {
+        return customerPhone;
+    }
+
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
@@ -66,7 +63,6 @@ public class BankAccount {
         }
     }
 
-    // Withdraw method
     public void withdraw(double amount) {
         if (amount <= balance) {
             balance -= amount;
@@ -77,10 +73,15 @@ public class BankAccount {
     }
 
     public static void main(String[] args) {
-        // Example usage
-        BankAccount myAccount = new BankAccount("123456", 1000.0, "John Doe",
-                "john.doe@email.com", "123-456-7890");
-        myAccount.deposit(200.0);
-        myAccount.withdraw(150.0);
+        BankAccount myAccount = new BankAccount("123456", 10000, "Renebaebae",
+                "renebaebae@redvelvet.com", "08987654321");
+        myAccount.deposit(20000);
+        myAccount.withdraw(15000);
+
+        System.out.println("Account Number: " + myAccount.getAccountNumber());
+        System.out.println("Customer Name: " + myAccount.getCustomerName());
+        System.out.println("Customer Email: " + myAccount.getCustomerEmail());
+        System.out.println("Customer Phone: " + myAccount.getCustomerPhone());
+        System.out.println("Initial Balance: " + myAccount.getBalance());
     }
 }
